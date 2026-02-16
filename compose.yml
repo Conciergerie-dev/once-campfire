@@ -1,0 +1,12 @@
+services:
+  campfire:
+    build: .
+    ports:
+      - 8043:80
+    volumes:
+      - ./storage:/rails/storage
+    environment:
+      SECRET_KEY_BASE:     ${SECRET_KEY_BASE}
+      VAPID_PUBLIC_KEY:    ${VAPID_PUBLIC_KEY}
+      VAPID_PRIVATE_KEY:   ${VAPID_PRIVATE_KEY}
+      DISABLE_SSL: true
